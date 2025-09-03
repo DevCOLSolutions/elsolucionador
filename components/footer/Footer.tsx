@@ -64,7 +64,7 @@ const Footer = () => {
 
                             <p>+57 313 284 17 28</p>
 
-                            <p className="break-words">elsolucionador2019@gmail.com</p>
+                            <p className="break-all">elsolucionador2019@gmail.com</p>
 
                         </div>
 
