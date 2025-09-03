@@ -53,11 +53,11 @@ const ShuffleHero: React.FC = () => {
           <input
             type="tel"
             placeholder="Ingresa tu número para recibir más información"
-            className="flex-1 border border-slate-300 rounded-l-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#d44d13]"
+            className="flex-1 border border-slate-300 rounded-l-lg px-4 md:px-4 py-2 md:py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#d44d13]"
           />
           <button
             type="submit"
-            className="bg-[#d44d13] text-white font-medium px-6 py-3 rounded-r-lg transition-all hover:bg-[#b83f0f] active:scale-95"
+            className="bg-[#d44d13] text-white font-medium px-4 md:px-6 py-2 md:py-3 rounded-r-lg transition-all hover:bg-[#b83f0f] active:scale-95"
           >
             Recibir info
           </button>
