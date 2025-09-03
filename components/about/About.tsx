@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import { Zap, ShieldCheck, Award, Eye, Briefcase, Target, Lightbulb, Users } from 'lucide-react'
+import { Zap, ShieldCheck, Award, Eye, Briefcase } from 'lucide-react'
 import Image from 'next/image';
 import GalleryAbout from '../gallery/Galleryabout';
 import ValuesInteractive from './Valores';

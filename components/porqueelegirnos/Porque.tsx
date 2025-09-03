@@ -1,14 +1,9 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { Star, Clock, Shield, DollarSign, Wrench, Smartphone, CheckCircle, Award, Zap, Phone } from 'lucide-react';
+import { Star, Clock, Shield, DollarSign, Wrench, CheckCircle, Award, Zap, Phone } from 'lucide-react';
 import Image from 'next/image';
 import { 
-  Building2, 
   Users, 
-  Lightbulb, 
-  Code2,
-  ChevronRight,
-  Sparkles
 } from 'lucide-react';
 
 const PorqueElegirnos: React.FC = () => {

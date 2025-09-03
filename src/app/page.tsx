@@ -1,13 +1,11 @@
-import Image from "next/image";
+
 import ElSolucionadorNavbar from "../../components/Navbar";
-import HeroSection from "../../components/Hero";
 import ShuffleHero from "../../components/Hero";
 import Footer from "../../components/footer/Footer";
 import { WhatsAppFloatingButton } from "../../components/Whatsapp/Whatsaap";
 import ContactForm from "../../components/formcontact/Form_contact";
 import ServicesSection from "../../components/Services/Services_home";
 import App from "../../components/clients/Clients";
-import MasonryGallery from "../../components/gallery/Gallery";
 import ExpandableGallery from "../../components/gallery/Gallery";
 
 import { Metadata } from "next";

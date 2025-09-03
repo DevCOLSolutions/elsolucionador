@@ -3,8 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { 
-  ArrowUpRight, BriefcaseBusiness, CircleX, Facebook, House, Instagram, 
+import {  BriefcaseBusiness, CircleX, Facebook, House, Instagram, 
   Mail, MapPinned, Menu, MessageSquare, PhoneCall, Users, Wrench, ChevronDown 
 } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';

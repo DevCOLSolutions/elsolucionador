@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, ChangeEvent } from 'react';
-import { Phone, Mail, MapPin, Upload, Clock, AlertCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, AlertCircle } from 'lucide-react';
 
 // Tipos para el formulario
 interface FormData {
