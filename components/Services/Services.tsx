@@ -4,7 +4,7 @@ import { Wrench, Zap, Hammer, Snowflake, Home, Truck, Clock, Shield, Star, Check
 import Image from 'next/image';
 
 const Servicios2 = () => {
-  const [selectedService, setSelectedService] = useState(null);
+  const [selectedService, setSelectedService] = useState<string | null>(null);
 
   const services = [
     {
