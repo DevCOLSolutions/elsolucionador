@@ -1,12 +1,11 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import { Zap, ShieldCheck, Award, Eye, Briefcase } from 'lucide-react'
 import Image from 'next/image';
 import GalleryAbout from '../gallery/Galleryabout';
 import ValuesInteractive from './Valores';
 
 const AboutUs: React.FC = () => {
-  const [hoveredValue, setHoveredValue] = useState<number | null>(null)
 
   const values = [
     { 

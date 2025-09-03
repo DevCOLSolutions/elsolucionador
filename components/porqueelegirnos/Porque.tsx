@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { Star, Clock, Shield, DollarSign, Wrench, CheckCircle, Award, Zap, Phone } from 'lucide-react';
+import { Star, Clock, Shield, DollarSign, Wrench, CheckCircle, Zap, Phone } from 'lucide-react';
 import Image from 'next/image';
 import { 
   Users, 
