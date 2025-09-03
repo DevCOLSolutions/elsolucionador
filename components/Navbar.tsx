@@ -273,13 +273,18 @@ const ElSolucionadorNavbar: React.FC = () => {
             {/* Navegación */}
             <div className="lg:flex mr-6 flex items-center justify-center" >
                 <div className="md:mt-0 md:ml-10 h-full flex items-center">
-                  <button
+                  <a
+                   href={`https://wa.me/573132841728?text=${encodeURIComponent(
+                    "⚡ ¡Hola! Tengo una emergencia. Necesito atención inmediata ⏱️"
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                     onClick={handleEmergencyClick}
                     className="cursor-pointer py-2 px-5 rounded-full border-2 border-[#d44d13] text-[#d44d13] bg-white flex items-center gap-2 font-bold text-sm uppercase tracking-wide 
                               hover:bg-[#d44d13] hover:text-white transition-all duration-300 transform hover:scale-110 shadow-md animate-fast-blink"
                   >
                     🚨 ¡Tengo una Emergencia!
-                  </button>
+                  </a>
                 </div>
               </div>
             <nav className="flex-1 py-4">

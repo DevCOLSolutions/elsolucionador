@@ -93,14 +93,14 @@ const ServicesSection: React.FC = () => {
         }
       `}</style>
       
-      <section className="py-12 px-4 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
+      <section className="py-12 px-4 bg-gradient-to-br from-gray-50 to-gray-100  overflow-hidden">
         <div className="max-w-6xl mx-auto">
           {/* Header compacto */}
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#245565] dark:text-white mb-3 uppercase -tracking-wide">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#245565]  mb-3 uppercase -tracking-wide">
               Conoce los <span className='text-[#d44d13]'>servicios</span> que ofrecemos
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-base">
+            <p className="text-gray-600  max-w-2xl mx-auto text-base">
               Soluciones completas para tu hogar con profesionales y disponibilidad 24/7
             </p>
           </div>
@@ -132,9 +132,9 @@ const ServicesSection: React.FC = () => {
                   <div
                     key={service.id}
                     className={`
-                      group relative bg-white dark:bg-gray-800 rounded-xl md:rounded-2xl 
+                      group relative bg-white  rounded-xl md:rounded-2xl 
                       p-3 md:p-6 cursor-pointer transition-all duration-300 hover:shadow-xl
-                      border-2 md:border-4 border-gray-200 dark:border-gray-700 hover:border-[#d44d13]
+                      border-2 md:border-4 border-gray-200 hover:border-[#d44d13]
                       ${hoveredService === service.id ? 'bg-gradient-to-br from-[#d44d13]/5 to-[#245565]/5' : ''}
                     `}
                     onMouseEnter={() => setHoveredService(service.id)}
@@ -152,13 +152,13 @@ const ServicesSection: React.FC = () => {
                     </div>
 
                     {/* Título compacto en móvil */}
-                    <h3 className="text-sm md:text-lg font-bold text-[#245565] dark:text-white text-center mb-2 md:mb-4 group-hover:text-[#d44d13] transition-colors leading-tight">
+                    <h3 className="text-sm md:text-lg font-bold text-[#245565] text-center mb-2 md:mb-4 group-hover:text-[#d44d13] transition-colors leading-tight">
                       {service.name}
                     </h3>
 
                     {/* Descripción solo en tablet/desktop */}
                     <div className="hidden md:flex h-16 items-center">
-                      <p className="text-sm text-gray-600 dark:text-gray-300 text-center leading-tight">
+                      <p className="text-sm text-gray-600  text-center leading-tight">
                         {service.description}
                       </p>
                     </div>

@@ -111,7 +111,7 @@ export default function ValuesInteractive({ className = "" }: ValuesInteractiveP
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#245565] via-[#245565] to-[#245565] dark:from-white dark:via-gray-100 dark:to-white bg-clip-text text-transparent mb-4"
+            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#245565] via-[#245565] to-[#245565] bg-clip-text text-transparent mb-4"
           >
             Valores y Principios
           </motion.h2>
@@ -121,7 +121,7 @@ export default function ValuesInteractive({ className = "" }: ValuesInteractiveP
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed"
           >
           Los principios, objetivos y valores que guían cada uno de nuestros servicios y garantizan la excelencia en cada proyecto.
           </motion.p>
@@ -150,7 +150,7 @@ export default function ValuesInteractive({ className = "" }: ValuesInteractiveP
                 aria-pressed={active === v.id}
               >
                 {/* Card background with glassmorphism effect */}
-                <div className="absolute inset-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/20 dark:border-gray-800/50"></div>
+                <div className="absolute inset-0 bg-white/80  backdrop-blur-xl border border-white/20"></div>
                 
                 {/* Animated gradient background */}
                 <motion.div
@@ -179,7 +179,7 @@ export default function ValuesInteractive({ className = "" }: ValuesInteractiveP
 
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between gap-4 mb-3">
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                        <h3 className="text-xl font-bold text-gray-900 ">
                           {v.title}
                         </h3>
                         
@@ -188,14 +188,14 @@ export default function ValuesInteractive({ className = "" }: ValuesInteractiveP
                           transition={{ duration: 0.3 }}
                           className="flex items-center gap-2"
                         >
-                          <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
+                          <span className="text-xs font-medium text-gray-500 ">
                             {active === v.id ? "✖️" : "↕️"}
                           </span>
                           <ChevronDown className="h-4 w-4 text-gray-400" />
                         </motion.div>
                       </div>
 
-                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                      <p className="text-gray-600  leading-relaxed mb-4">
                         {v.subtitle}
                       </p>
 
@@ -210,8 +210,8 @@ export default function ValuesInteractive({ className = "" }: ValuesInteractiveP
                         className="overflow-hidden"
                       >
                         {active === v.id && (
-                          <div className="pt-4 border-t border-gray-200/50 dark:border-gray-700/50">
-                            <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
+                          <div className="pt-4 border-t border-gray-200/50">
+                            <p className="text-gray-700 eading-relaxed mb-6">
                               {getDetailText(v.title)}
                             </p>
 
@@ -233,7 +233,7 @@ export default function ValuesInteractive({ className = "" }: ValuesInteractiveP
                                   e.stopPropagation();
                                   setActive(null);
                                 }}
-                                className="inline-flex items-center gap-2 rounded-full border-2 border-gray-200 dark:border-gray-600 px-6 py-3 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300"
+                                className="inline-flex items-center gap-2 rounded-full border-2 border-gray-200 px-6 py-3 text-sm font-medium text-gray-700  hover:bg-gray-50  transition-all duration-300"
                               >
                                 Cerrar
                               </motion.button>

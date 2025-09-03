@@ -100,15 +100,15 @@ const Servicios2 = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-         <section className="bg-amber-100 dark:bg-gray-900">
+         <section className="bg-amber-100 ">
                 <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-8 lg:grid-cols-12 text-right">
                   <div className="mr-auto place-self-center lg:col-span-8">
-                    <h1 className="max-w-2xl mb-4 text-4xl font-semibold md:text-4xl xl:text-6xl text-[#245565] dark:text-white">
+                    <h1 className="max-w-2xl mb-4 text-4xl font-semibold md:text-4xl xl:text-6xl text-[#245565]">
                      
                       Nuestros Servicios<span className="text-[#d44d13]"> Especializados</span>
                     
                     </h1>
-                    <p className="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-lg dark:text-gray-400">
+                    <p className="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-lg ">
                      En El Solucionador Express ofrecemos una gama completa de servicios de mantenimiento y reparación diseñados para resolver tus necesidades de manera rápida y eficiente.
                     </p>
                     

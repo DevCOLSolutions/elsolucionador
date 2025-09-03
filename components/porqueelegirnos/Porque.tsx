@@ -75,15 +75,15 @@ const PorqueElegirnos: React.FC = () => {
   return (
     <div className=" bg-white">
       {/* Hero Section */}
-    <section className="bg-amber-100 dark:bg-gray-900">
+    <section className="bg-amber-100">
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-8 lg:grid-cols-12 text-right">
           <div className="mr-auto place-self-center lg:col-span-8">
-            <h1 className="max-w-2xl mb-4 text-4xl font-semibold md:text-4xl xl:text-6xl text-[#245565] dark:text-white">
+            <h1 className="max-w-2xl mb-4 text-4xl font-semibold md:text-4xl xl:text-6xl text-[#245565] ">
              
               ¿Por qué elegir <span className="text-[#d44d13]">El Solucionador Express?</span>
             
             </h1>
-            <p className="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-lg dark:text-gray-400">
+            <p className="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-lg ">
               Desde emergencias de plomería hasta electricidad y obras, clientes residenciales y empresas confían en El Solucionador Express para soluciones rápidas y confiables.
             </p>
             
