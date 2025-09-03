@@ -162,14 +162,11 @@ const Servicios2 = () => {
                   animation: 'fadeInUp 0.6s ease-out forwards'
                 }}
               >
-                <div className={`
-                  bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500
-                  border-2 border-transparent hover:border-opacity-50
-                  ${isSelected ? 'shadow-2xl ring-4 ring-opacity-50' : ''}
-                `} style={{
-                  borderColor: isSelected ? '#d44d13' : 'transparent',
-                  ringColor: isSelected ? '#d44d13' : 'transparent'
-                }}>
+                <div  className={`
+            bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500
+            border-2 border-transparent hover:border-opacity-50
+            ${isSelected ? 'shadow-2xl ring-4 ring-[#d44d13] ring-opacity-50 border-[#d44d13]' : ''}
+          `}>
                   {/* Card Header */}
                   <div className={`
                     relative p-6 rounded-t-2xl text-white overflow-hidden
