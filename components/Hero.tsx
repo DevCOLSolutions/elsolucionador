@@ -59,7 +59,7 @@ const ShuffleHero: React.FC = () => {
             type="submit"
             className="bg-[#d44d13] text-white font-medium px-4 md:px-6 py-2 md:py-3 rounded-r-lg transition-all hover:bg-[#b83f0f] active:scale-95"
           >
-            Recibir info
+            + info
           </button>
         </motion.form>
 
