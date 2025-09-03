@@ -19,7 +19,7 @@ const ShuffleHero: React.FC = () => {
       <section className="w-full py-5 max-w-4xl">
         {/* Título y descripción */}
         <motion.h2
-          className="text-6xl  md:text-6xl font-bold text-[#245565]"
+          className="text-3xl md:text-6xl font-bold text-[#245565]"
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
