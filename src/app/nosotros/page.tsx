@@ -4,6 +4,7 @@ import Footer from "../../../components/footer/Footer";
 import { WhatsAppFloatingButton } from "../../../components/Whatsapp/Whatsaap";
 import AboutUs from "../../../components/about/About";
 import { Metadata } from "next";
+import { EmergencyFloatingButton } from "../../../components/Whatsapp/Emergency";
 
 
 export const metadata: Metadata = {
@@ -35,6 +36,7 @@ export default function page() {
 
         <AboutUs/>
       <Footer/>
+      <EmergencyFloatingButton/>
       <WhatsAppFloatingButton/>
     </div>
   );

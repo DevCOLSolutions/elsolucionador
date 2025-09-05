@@ -97,12 +97,17 @@ const ServicesSection: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           {/* Header compacto */}
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#245565]  mb-3 uppercase -tracking-wide">
+            <h2 className="text-4 xl md:text-4xl font-bold text-[#245565] mb-3 uppercase -tracking-wide">
               Conoce los <span className='text-[#d44d13]'>servicios</span> que ofrecemos
             </h2>
-            <p className="text-gray-600  max-w-2xl mx-auto text-base">
-              Soluciones completas para tu hogar con profesionales y disponibilidad 24/7
+            <p className="text-gray-600 max-w-2xl mx-auto text-base mb-2">
+              Soluciones completas para tu hogar con profesionales certificados
             </p>
+            <div className="bg-red-50 border-2 border-red-200 rounded-lg p-4 max-w-2xl mx-auto">
+              <p className="text-red-700 font-bold text-lg">
+                🚨 EMERGENCIAS 24/7 - RESPUESTA EN 1 HORA MÁXIMO 🚨
+              </p>
+            </div>
           </div>
 
           {/* Contenedor de servicios con animación */}
@@ -191,9 +196,9 @@ const ServicesSection: React.FC = () => {
             <div className="mt-10 text-center">
               <div className="inline-flex items-center space-x-3 bg-[#d44d13] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b8420f] transition-all duration-300 cursor-pointer group">
                 <Phone size={20} className="group-hover:animate-pulse" />
-                <a href="tel:+573132841728">¿Necesitas ayuda inmediata?</a>
+                <a href="tel:+573132841728">¿Necesitas ayuda inmediata o <b>tienes una emergencia?</b></a>
               </div>
-            </div>
+            </div>  
           </div>
         </div>
       </section>

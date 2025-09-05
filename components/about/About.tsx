@@ -50,9 +50,14 @@ const AboutUs: React.FC = () => {
                      Nosotros
                     
                     </h1>
-                    <p className="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-lg">
+                    <p className="max-w-2xl mb-6 font-light text-gray-600 lg:mb-2 md:text-lg lg:text-lg">
                       Somos una empresa orientada a la excelencia en servicios de mantenimiento y reparación express. En El Solucionador Express trabajamos bajo principios de calidad, responsabilidad y eficiencia, con el propósito de convertirnos en el aliado estratégico de cada cliente.
                     </p>
+                    <div className="bg-red-50 border-2 border-red-200 rounded-lg p-4 max-w-2xl mx-auto text-center">
+                      <p className="text-red-700 font-bold text-lg">
+                        🚨 EMERGENCIAS 24/7 - RESPUESTA EN 1 HORA MÁXIMO 🚨
+                      </p>
+                    </div>
                     
                    
                   </div>

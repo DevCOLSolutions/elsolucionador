@@ -9,6 +9,7 @@ import App from "../../components/clients/Clients";
 import ExpandableGallery from "../../components/gallery/Gallery";
 
 import { Metadata } from "next";
+import { EmergencyFloatingButton } from "../../components/Whatsapp/Emergency";
 
 export const metadata: Metadata = {
   title: "Inicio | El Solucionador",
@@ -42,6 +43,7 @@ export default function Home() {
       <ContactForm/>
       <ExpandableGallery/>
       <Footer/>
+      <EmergencyFloatingButton/>
       <WhatsAppFloatingButton/>
     </div>
   );

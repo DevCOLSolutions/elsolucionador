@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +16,14 @@ export default function RootLayout({
         className="antialiased"
       >
         {children}
+
+        <ToastContainer
+                  position="top-right"
+
+                  autoClose={10000}
+                  hideProgressBar={false}
+                  // ... más configuraciones
+                />
       </body>
     </html>
   );

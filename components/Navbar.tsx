@@ -21,6 +21,7 @@ interface ContactInfo {
   phone: string;
   email: string;
   location: string;
+  emergency: string;
 }
 
 interface SocialLinks {
@@ -47,6 +48,7 @@ const contactInfo: ContactInfo = {
   phone: '+57 313 284 17 28',
   email: 'elsolucionador2019@gmail.com',
   location: 'Bogotá, Colombia',
+  emergency: 'Emergencias 24/7, atención en 1 hora',
 };
 
 const socialLinks: SocialLinks = {
@@ -151,9 +153,13 @@ const ElSolucionadorNavbar: React.FC = () => {
                   <Mail className="w-3.5 h-3.5 mr-2"/> 
                   {contactInfo.email}
                 </span>
-                <span className="flex items-center">
+                <span className="flex items-center border-r px-2">
                   <MapPinned className="w-3.5 h-3.5 mr-2"/>
                   {contactInfo.location}
+                </span>
+                <span className="flex items-center ">
+                  <MapPinned className="w-3.5 h-3.5 mr-2"/>
+                 <b> {contactInfo.emergency}</b>
                 </span>
               </div>
               

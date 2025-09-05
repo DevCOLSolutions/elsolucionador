@@ -4,6 +4,7 @@ import Footer from "../../../components/footer/Footer";
 import { WhatsAppFloatingButton } from "../../../components/Whatsapp/Whatsaap";
 import Servicios2 from "../../../components/Services/Services";
 import { Metadata } from "next";
+import { EmergencyFloatingButton } from "../../../components/Whatsapp/Emergency";
 
 export const metadata: Metadata = {
   title: "Servicios | El Solucionador",
@@ -34,6 +35,7 @@ export default function page() {
       <ElSolucionadorNavbar/>
         <Servicios2/>
       <Footer/>
+      <EmergencyFloatingButton/>
       <WhatsAppFloatingButton/>
     </div>
   );

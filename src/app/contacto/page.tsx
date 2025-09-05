@@ -8,6 +8,7 @@ import { Facebook, Instagram } from "lucide-react";
 import ContactForm2 from "../../../components/formcontact/Contactcontact";
 
 import { Metadata } from "next";
+import { EmergencyFloatingButton } from "../../../components/Whatsapp/Emergency";
 
 export const metadata: Metadata = {
   title: "Contacto | El Solucionador",
@@ -102,6 +103,7 @@ export default function page() {
 
       <ContactForm2/>
       <Footer/>
+      <EmergencyFloatingButton/>
       <WhatsAppFloatingButton/>
     </div>
   );

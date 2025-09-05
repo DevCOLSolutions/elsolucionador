@@ -5,6 +5,7 @@ import { WhatsAppFloatingButton } from "../../../components/Whatsapp/Whatsaap";
 import PorqueElegirnos from "../../../components/porqueelegirnos/Porque";
 
 import { Metadata } from "next";
+import { EmergencyFloatingButton } from "../../../components/Whatsapp/Emergency";
 
 export const metadata: Metadata = {
   title: "¿Por qué elegirnos? | El Solucionador",
@@ -36,6 +37,7 @@ export default function page() {
       <ElSolucionadorNavbar/>
         <PorqueElegirnos/>
       <Footer/>
+      <EmergencyFloatingButton/>
       <WhatsAppFloatingButton/>
     </div>
   );

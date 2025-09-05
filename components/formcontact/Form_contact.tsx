@@ -1,6 +1,8 @@
 'use client'
 import React, { useState, ChangeEvent } from 'react';
 import { Phone, Mail, MapPin, Clock, AlertCircle } from 'lucide-react';
+import emailjs from "emailjs-com";
+import { toast} from 'react-toastify';
 
 // Tipos para el formulario
 interface FormData {
@@ -11,26 +13,10 @@ interface FormData {
   barrio: string;
   direccion: string;
   descripcion: string;
-  urgencia: string;
-  fotos: File[];
-  horarios: string[];
-  primerVez: string;
-  comoConocio: string;
 }
 
-interface UrgenciaOption {
-  value: string;
-  label: string;
-  emergency: boolean;
-}
 
 type ServiceType = 'Plomería' | 'Electricidad' | 'Carpintería' | 'Aire Acondicionado' | 'Remodelación' | 'Múltiples Servicios' | 'Emergencia';
-
-type UrgencyType = 'hoy' | 'semana' | 'proxima' | 'esperar';
-
-type ScheduleType = 'Mañana (7am-12pm)' | 'Tarde (12pm-5pm)' | 'Noche (5pm-7pm)';
-
-type ReferralType = 'Redes sociales' | 'Recomendación' | 'Google' | 'Pasando por la zona' | 'Cliente anterior';
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -41,13 +27,8 @@ const ContactForm: React.FC = () => {
     barrio: '',
     direccion: '',
     descripcion: '',
-    urgencia: '',
-    fotos: [],
-    horarios: [],
-    primerVez: '',
-    comoConocio: ''
   });
-
+  const [isLoading, setIsLoading] = useState(false);
   const [isEmergency, setIsEmergency] = useState<boolean>(false);
 
   const servicios: ServiceType[] = [
@@ -60,73 +41,73 @@ const ContactForm: React.FC = () => {
     'Emergencia'
   ];
 
-  const urgenciaOptions: UrgenciaOption[] = [
-    { value: 'hoy', label: 'Hoy mismo (Emergencia)', emergency: true },
-    { value: 'semana', label: 'Esta semana', emergency: false },
-    { value: 'proxima', label: 'Próxima semana', emergency: false },
-    { value: 'esperar', label: 'Puedo esperar', emergency: false }
-  ];
-
-  const horariosOptions: ScheduleType[] = [
-    'Mañana (7am-12pm)',
-    'Tarde (12pm-5pm)', 
-    'Noche (5pm-7pm)'
-  ];
-
-  const comoConocioOptions: ReferralType[] = [
-    'Redes sociales',
-    'Recomendación',
-    'Google',
-    'Pasando por la zona',
-    'Cliente anterior'
-  ];
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>): void => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     
-    if (name === 'urgencia') {
-      setIsEmergency(value === 'hoy');
-    }
   };
 
-  const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    const { name, value, checked } = e.target;
-    if (name === 'horarios') {
-      setFormData(prev => ({
-        ...prev,
-        horarios: checked 
-          ? [...prev.horarios, value]
-          : prev.horarios.filter(h => h !== value)
-      }));
-    }
-  };
 
-  const handleFileUpload = (e: ChangeEvent<HTMLInputElement>): void => {
-    const files = e.target.files;
-    if (files) {
-      const fileArray = Array.from(files);
-      setFormData(prev => ({ ...prev, fotos: [...prev.fotos, ...fileArray] }));
-    }
-  };
 
-  const handleSubmit = (): void => {
-    // Validar campos requeridos
-    const requiredFields: (keyof FormData)[] = ['nombre', 'telefono', 'tipoServicio', 'direccion', 'urgencia'];
-    const missingFields = requiredFields.filter(field => !formData[field]);
-    
-    if (!isEmergency && !formData.email) {
-      missingFields.push('email');
-    }
-    
-    if (missingFields.length > 0) {
-      alert(`Por favor completa los siguientes campos: ${missingFields.join(', ')}`);
-      return;
-    }
-    
-    console.log('Datos del formulario:', formData);
-    alert('¡Formulario enviado correctamente! Te contactaremos pronto.');
-  };
+
+  const handleSubmit = async (): Promise<void> => {
+  setIsLoading(true); // Inicia el loading
+  const requiredFields: (keyof FormData)[] = ['nombre', 'telefono', 'tipoServicio', 'direccion'];
+  const missingFields = requiredFields.filter(field => !formData[field]);
+
+  if (!isEmergency && !formData.email) {
+    missingFields.push('email');
+  }
+
+  if (missingFields.length > 0) {
+    alert(`Por favor completa los siguientes campos: ${missingFields.join(', ')}`);
+    return;
+  }
+
+  try {
+    // Llamada a EmailJS
+    const result = await emailjs.send(
+      "service_4347wss",
+      "template_lcsy1yj",
+      {
+        nombre: formData.nombre,
+        telefono: formData.telefono,
+        email: formData.email,
+        tipoServicio: formData.tipoServicio,
+        barrio: formData.barrio,
+        direccion: formData.direccion,
+        descripcion: formData.descripcion,
+      },
+      "9qhb2rbI9Vn7zdTvw"
+    );
+
+     toast.success("¡Formulario enviado correctamente! Te contactaremos pronto.", {
+        position: "top-right",
+        autoClose: 10000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+
+    setFormData({
+      nombre: '',
+      telefono: '',
+      email: '',
+      tipoServicio: '',
+      barrio: '',
+      direccion: '',
+      descripcion: '',
+    });
+
+  } catch (error) {
+    console.error("Error enviando el formulario:", error);
+    alert("Ocurrió un error al enviar el formulario. Intenta de nuevo.");
+  } finally {
+    setIsLoading(false); // Termina el loading siempre
+  }
+};
 
   const isRequired = (field: keyof FormData): boolean => {
     const essentialFields: (keyof FormData)[] = ['nombre', 'telefono', 'tipoServicio', 'direccion'];
@@ -200,17 +181,17 @@ const ContactForm: React.FC = () => {
                 {/* Preferred Hours */}
                 <div className="mb-8 flex justify-center items-center">
                 <button
-  type="button"
-  onClick={() => setIsEmergency(!isEmergency)}
-  className={`w-full px-3 py-1.5 cursor-pointer rounded-lg font-semibold text-lg transition duration-200 flex items-center justify-center space-x-2 ${
-    isEmergency 
-      ? 'bg-red-500 text-white shadow-lg hover:bg-red-600' 
-      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-  }`}
->
-  <AlertCircle className="w-6 h-6" />
-  <span>{isEmergency ? '🚨 Emergencia activada' : '¿Es una emergencia?'}</span>
-</button>
+                  type="button"
+                  onClick={() => setIsEmergency(!isEmergency)}
+                  className={`w-full px-3 py-1.5 cursor-pointer rounded-lg font-semibold text-lg transition duration-200 flex items-center justify-center space-x-2 ${
+                    isEmergency 
+                      ? 'bg-red-500 text-white shadow-lg hover:bg-red-600' 
+                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  }`}
+                >
+                  <AlertCircle className="w-6 h-6" />
+                  <span>{isEmergency ? '🚨 Emergencia activada' : '¿Es una emergencia?'}</span>
+                </button>
 
               </div>
 
@@ -338,20 +319,32 @@ const ContactForm: React.FC = () => {
 
                 {/* Submit Button */}
                 <div className="">
-                  <button
-                    type="button"
-                    onClick={handleSubmit}
-                    className="w-full bg-gradient-to-r from-[#d44d13]/90 to-[#d44d13]/90 text-white font-semibold py-4 px-8 rounded-lg hover:from-[#d44d13] hover:to-[#d44d13] transform hover:scale-[1.02] transition duration-200 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
-                  >
-                    <Clock className="w-5 h-5" />
-                    <span>{isEmergency ? 'Enviar Solicitud de Emergencia' : 'Solicitar Servicio'}</span>
-                  </button>
-                </div>
+  <button
+    type="button"
+    onClick={handleSubmit}
+    disabled={isLoading}
+    className="w-full bg-gradient-to-r from-[#d44d13]/90 to-[#d44d13]/90 text-white font-semibold py-4 px-8 rounded-lg hover:from-[#d44d13] hover:to-[#d44d13] transform hover:scale-[1.02] transition duration-200 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 disabled:opacity-75 disabled:cursor-not-allowed disabled:transform-none"
+  >
+    {isLoading ? (
+      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+    ) : (
+      <Clock className="w-5 h-5" />
+    )}
+    <span>
+      {isLoading 
+        ? 'Enviando...' 
+        : (isEmergency ? 'Enviar Solicitud de Emergencia' : 'Solicitar Servicio')
+      }
+    </span>
+  </button>
+</div>
 
                 <div className="text-center text-xs text-gray-500">
                   Al enviar este formulario, aceptas nuestros términos de servicio y política de privacidad.
                   
                 </div>
+
+                
               </div>
             </div>
           </div>
