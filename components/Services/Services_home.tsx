@@ -105,7 +105,7 @@ const ServicesSection: React.FC = () => {
             </p>
             <div className="bg-red-50 border-2 border-red-200 rounded-lg p-4 max-w-2xl mx-auto">
               <p className="text-red-700 font-bold text-lg">
-                🚨 EMERGENCIAS 24/7 - RESPUESTA EN 1 HORA MÁXIMO 🚨
+                🚨 EMERGENCIAS 24/7 - ATENCIÓN EN 1 HORA MÁXIMO 🚨
               </p>
             </div>
           </div>

@@ -8,30 +8,62 @@ import { EmergencyFloatingButton } from "../../../components/Whatsapp/Emergency"
 
 
 export const metadata: Metadata = {
-  title: "Nosotros | El Solucionador",
-  description: "Conoce a El Solucionador: nuestra misión, visión y valores basados en rapidez, confiabilidad y profesionalismo.",
-  keywords: ["sobre nosotros", "El Solucionador", "misión", "visión", "valores"],
+  title: "Nosotros | El Solucionador - Empresa de Servicios Técnicos Bogotá",
+  description: "Conoce El Solucionador: empresa líder en servicios técnicos domiciliarios en Bogotá con más de X años de experiencia. Técnicos certificados, garantía en todos los trabajos.",
+  keywords: [
+    "empresa servicios técnicos Bogotá",
+    "técnicos certificados Colombia",
+    "experiencia reparaciones domiciliarias",
+    "equipo profesional electricistas",
+    "empresa confiable plomería",
+    "historia El Solucionador",
+    "valores empresa técnica",
+    "misión servicios hogar"
+  ],
   openGraph: {
-    title: "Sobre Nosotros | El Solucionador",
-    description: "Conoce a El Solucionador: nuestra misión, visión y valores basados en rapidez, confiabilidad y profesionalismo.",
+    title: "Nosotros | El Solucionador - Expertos en Servicios Técnicos",
+    description: "Empresa líder en servicios técnicos domiciliarios en Bogotá. Técnicos certificados con años de experiencia y garantía total.",
     url: "https://www.elsolucionador.com.co/nosotros",
-    siteName: "El Solucionador",
     images: [
       {
-        url: "https://www.elsolucionador.com.co/og-nosotros.jpg",
+        url: "/home/4.jpeg",
         width: 1200,
         height: 630,
-        alt: "El Solucionador - Nosotros",
+        alt: "Equipo de técnicos profesionales de El Solucionador en Bogotá",
       },
     ],
-    locale: "es_CO",
-    type: "website",
+  },
+  alternates: {
+    canonical: "https://www.elsolucionador.com.co/nosotros",
   },
 };
+
 
 export default function page() {
   return (
     <div className="">
+
+      {/* Schema.org para página About */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "Acerca de El Solucionador",
+            "description": "Historia y valores de El Solucionador, empresa de servicios técnicos en Bogotá",
+            "url": "https://www.elsolucionador.com.co/nosotros",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "El Solucionador",
+              "foundingDate": "2015", // Cambia por tu año real
+              "numberOfEmployees": "15-20", // Ajusta según tu equipo
+              "slogan": "Soluciones rápidas, confiables y profesionales"
+            }
+          })
+        }}
+      />
+
       <ElSolucionadorNavbar/>
 
         <AboutUs/>

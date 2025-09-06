@@ -10,6 +10,7 @@ interface SquareData {
 
 
 import { toast } from 'react-toastify';
+import { Download } from "lucide-react";
 
 
 const fadeInUp = {
@@ -88,14 +89,14 @@ const ShuffleHero: React.FC = () => {
       <section className="w-full py-5 max-w-4xl">
         {/* Título y descripción */}
         <motion.h2
-          className="text-6xl md:text-6xl font-bold text-[#245565]"
+          className="text-6xl md:text-6xl font-bold text-[#245565] break-words"
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          Soluciones en <span className="text-[#b83f0f] ">mantenimiento</span> y{" "}
+          Soluciones en <span className="text-[rgb(184,63,15)] ">mantenimiento</span> y{" "}
           <span className="text-[#b83f0f] ">obra civil</span>.
         </motion.h2>
         <motion.p  className="text-base md:text-lg text-[#245565] font-bold mt-4"
@@ -103,7 +104,7 @@ const ShuffleHero: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}> 🚨Servicio de emergencias en 1 hora 🚨</motion.p>
+          transition={{ duration: 0.6, ease: "easeOut" }}> 🚨Servicio de emergencias con atención en 1 hora 🚨</motion.p>
         <motion.p
           className="text-base md:text-lg text-slate-600"
           variants={fadeInUp}
@@ -175,7 +176,16 @@ const ShuffleHero: React.FC = () => {
             <div>
               <h4 className="text-2xl font-bold text-[#245565]">📋</h4>
               <p className="text-slate-600 mt-2 text-sm">
-                <a href="">Descarga nuestro <b>brochure</b></a>
+                <a  href="/brochure_elsolucionador2025.pdf"
+                  download="Portafolio-ElSolucionador.pdf"
+                  className="flex flex-col items-start gap-1 hover:underline"
+                >
+                   <span>Descarga nuestro</span>
+    <span className="flex items-center gap-1">
+      <b>brochure</b>
+      <Download className="h-4 w-4" />
+    </span>
+                </a>
               </p>
             </div>
           </div>

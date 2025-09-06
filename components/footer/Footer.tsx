@@ -64,6 +64,8 @@ const Footer = () => {
 
                             <p>+57 313 284 17 28</p>
 
+                            
+                            <p className="break-all">contacto@elsolucionador.com.co</p>
                             <p className="break-all">elsolucionador2019@gmail.com</p>
 
                         </div>

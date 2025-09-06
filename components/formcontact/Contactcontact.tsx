@@ -155,7 +155,7 @@ const handleSubmit = async (): Promise<void> => {
       <Mail className="w-5 h-5" />
       <div>
         <p className="font-semibold">elsolucionador2019@gmail.com</p>
-        <p className="text-sm opacity-75">Respuesta en 2 horas</p>
+       <p className="text-sm opacity-75">Respuesta en 1 hora</p>
       </div>
     </div>
 
@@ -175,7 +175,7 @@ const handleSubmit = async (): Promise<void> => {
       <span className="font-semibold text-sm">EMERGENCIAS 24/7</span>
     </div>
     <p className="text-xs opacity-90">
-      Para emergencias, solo necesitas llenar los campos marcados con *
+      Para emergencias, solo necesitas llenar los campos marcados con *. <b>Ten en cuenta que nuestro tiempo de atención es de máximo 1 hora.</b>
     </p>
   </div>
 </div>

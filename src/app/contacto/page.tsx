@@ -11,30 +11,69 @@ import { Metadata } from "next";
 import { EmergencyFloatingButton } from "../../../components/Whatsapp/Emergency";
 
 export const metadata: Metadata = {
-  title: "Contacto | El Solucionador",
-  description: "¿Necesitas ayuda? Ponte en contacto con El Solucionador para recibir atención rápida y profesional.",
-  keywords: ["contacto", "El Solucionador", "atención al cliente", "Colombia"],
+  title: "Contacto | El Solucionador - Servicios Técnicos Bogotá",
+  description: "Contacta a El Solucionador para servicios técnicos en Bogotá. Teléfono, WhatsApp, email. Cotizaciones gratuitas, atención 24/7. ¡Respuesta inmediata!",
+  keywords: [
+    "contacto servicios técnicos Bogotá",
+    "teléfono electricista Bogotá",
+    "WhatsApp plomero urgente",
+    "cotización servicios técnicos",
+    "emergencias técnicas 24 horas",
+    "solicitar técnico domicilio",
+    "presupuesto reparaciones",
+    "contacto El Solucionador"
+  ],
   openGraph: {
-    title: "Contacto | El Solucionador",
-    description: "¿Necesitas ayuda? Ponte en contacto con El Solucionador para recibir atención rápida y profesional.",
-    url: "https://www.elsolucionador.com.co/contacto",
-    siteName: "El Solucionador",
+    title: "Contacto | El Solucionador - Atención 24/7 Bogotá",
+    description: "Contacta nuestros técnicos especializados. Atención inmediata, cotizaciones gratis, servicio 24/7 en Bogotá.",
+    url: "https://www.elsolucionador.com.co/contacto", 
     images: [
       {
-        url: "https://www.elsolucionador.com.co/og-contacto.jpg",
+        url: "/home/2.jpeg",
         width: 1200,
         height: 630,
-        alt: "Contacto El Solucionador",
+        alt: "Contacta El Solucionador para servicios técnicos en Bogotá - Atención 24/7",
       },
     ],
-    locale: "es_CO",
-    type: "website",
   },
+  alternates: {
+    canonical: "https://www.elsolucionador.com.co/contacto",
+  },
+  other: {
+    // Tags específicos para páginas de contacto
+    'contact:phone_number': '+57-313-2841728', // Tu teléfono real
+    'contact:email': 'contacto@elsolucionador.com.co', // Tu email real
+  }
 };
 
 export default function page() {
   return (
     <div className="">
+       <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage", 
+            "name": "Contacto El Solucionador",
+            "description": "Información de contacto para servicios técnicos en Bogotá",
+            "url": "https://www.elsolucionador.com.co/contacto",
+            "mainEntity": {
+              "@type": "LocalBusiness",
+              "name": "El Solucionador",
+              "telephone": "+57-XXX-XXXXXXX", // Tu teléfono real
+              "email": "info@elsolucionador.com.co", // Tu email real
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Bogotá",
+                "addressRegion": "Cundinamarca",
+                "addressCountry": "CO"
+              }
+            }
+          })
+        }}
+      />
+      
       <ElSolucionadorNavbar/>
       
       <section className="bg-amber-100 ">

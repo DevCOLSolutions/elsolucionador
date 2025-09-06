@@ -46,7 +46,7 @@ const navItems: NavItem[] = [
 
 const contactInfo: ContactInfo = {
   phone: '+57 313 284 17 28',
-  email: 'elsolucionador2019@gmail.com',
+  email: 'contacto@elsolucionador.com.co',
   location: 'Bogotá, Colombia',
   emergency: 'Emergencias 24/7, atención en 1 hora',
 };
